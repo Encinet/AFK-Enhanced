@@ -1,0 +1,2 @@
+# AFK-Enhanced
+Purpur plugin
