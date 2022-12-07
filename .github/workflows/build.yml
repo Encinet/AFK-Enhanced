@@ -23,4 +23,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: AFK-Enhanced
-          path: build/libs/
+          path: lib/build/libs/
