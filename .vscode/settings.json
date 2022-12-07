@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/bukkit-plugin.json": "file:///workspaces/AFK-Enhanced/lib/src/main/resources/plugin.yml"
+    },
+    "java.compile.nullAnalysis.mode": "automatic"
+}
