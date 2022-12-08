@@ -5,6 +5,7 @@ api-version: 1.19
 authors: [ ObcbO ]
 description: A afk plugin for purpur
 website: https://github.com/encinet/AFK-Enhanced
+softdepend: [ PlaceholderAPI ]
 commands:
   afk:
-    description: afk
+    description: away from keyboard

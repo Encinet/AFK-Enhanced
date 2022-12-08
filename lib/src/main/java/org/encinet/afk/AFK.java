@@ -4,17 +4,24 @@ import java.util.Objects;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.encinet.afk.event.PlayerAFK;
 
 public final class AFK extends JavaPlugin {
     public static final Logger logger = Logger.getLogger("AFK-Enhanced");
+    public static final Plugin plugin = JavaPlugin.getProvidingPlugin(AFK.class);
     public static final PluginManager pm = Bukkit.getPluginManager();
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+        logger.info("加载配置文件");
+        saveDefaultConfig();
+        reloadConfig();
+        Config.load();
+
         logger.info("注册监听");
         pm.registerEvents(new PlayerAFK(), this);
 
