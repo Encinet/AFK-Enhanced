@@ -11,12 +11,14 @@ import org.encinet.afk.event.PlayerAFK;
 
 public final class AFK extends JavaPlugin {
     public static final Logger logger = Logger.getLogger("AFK-Enhanced");
-    public static final Plugin plugin = JavaPlugin.getProvidingPlugin(AFK.class);
+    public static final Plugin plugin;
     public static final PluginManager pm = Bukkit.getPluginManager();
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+        plugin = JavaPlugin.getProvidingPlugin(AFK.class);
+
         logger.info("加载配置文件");
         saveDefaultConfig();
         reloadConfig();
