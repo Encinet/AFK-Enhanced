@@ -11,7 +11,7 @@ import org.encinet.afk.event.PlayerAFK;
 
 public final class AFK extends JavaPlugin {
     public static final Logger logger = Logger.getLogger("AFK-Enhanced");
-    public static final Plugin plugin;
+    public static Plugin plugin;
     public static final PluginManager pm = Bukkit.getPluginManager();
 
     @Override
