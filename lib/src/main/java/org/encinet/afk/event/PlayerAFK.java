@@ -16,12 +16,12 @@ public class PlayerAFK implements Listener {
             // 模拟距离设置为真实视距
             player.setSimulationDistance(player.getViewDistance());
             if (Config.broadcastAwayEnable) {
-                e.setBroadcastMsg(dispose.randomList(Config.broadcastAwayMessages));
+                e.setBroadcastMsg(dispose.papi(player, dispose.randomList(Config.broadcastAwayMessages)));
             }
         } else {
             player.setSimulationDistance(Bukkit.getSimulationDistance());
             if (Config.broadcastBackEnable) {
-                e.setBroadcastMsg(dispose.randomList(Config.broadcastBackMessages));
+                e.setBroadcastMsg(dispose.papi(player, dispose.randomList(Config.broadcastBackMessages)));
             }
         }
     }
