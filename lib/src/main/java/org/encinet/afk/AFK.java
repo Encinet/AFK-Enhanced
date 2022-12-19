@@ -7,15 +7,18 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.encinet.afk.event.PlayerAFK;
 import org.encinet.afk.event.PlayerNum;
+import org.encinet.afk.tasks.Check;
+import org.encinet.afk.tasks.Reward;
 
 public final class AFK extends JavaPlugin {
     public static final Logger logger = Logger.getLogger("AFK-Enhanced");
     public static Plugin plugin;
     public static final PluginManager pm = Bukkit.getPluginManager();
 
+    private static Check check;
+    private static Reward reward;
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -36,12 +39,16 @@ public final class AFK extends JavaPlugin {
         }
 
         logger.info("注册任务");
-        new Check().start();
-        new Reward().start();
+        check = new Check();
+        reward = new Reward();
+        check.start();
+        reward.start();
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        check.stop();
+        reward.stop();
     }
 }

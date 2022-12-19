@@ -1,9 +1,10 @@
-package org.encinet.afk;
+package org.encinet.afk.tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.encinet.afk.Config;
 import org.encinet.afk.unit.MoveStore;
 
 import java.util.Collection;
@@ -17,6 +18,11 @@ public class Check extends BukkitRunnable {
 
     public void start() {
         this.runTaskTimerAsynchronously(plugin, 20, 20);
+    }
+    public void stop() {
+        do {
+            this.cancel();
+        } while (!this.isCancelled());
     }
 
     @Override

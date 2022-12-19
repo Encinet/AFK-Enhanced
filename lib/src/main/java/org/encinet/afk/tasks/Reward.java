@@ -1,4 +1,4 @@
-package org.encinet.afk;
+package org.encinet.afk.tasks;
 
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -12,6 +12,11 @@ public class Reward extends BukkitRunnable {
 
     public void start() {
         this.runTaskTimerAsynchronously(plugin, 20, 200);
+    }
+    public void stop() {
+        do {
+            this.cancel();
+        } while (!this.isCancelled());
     }
 
     @Override
