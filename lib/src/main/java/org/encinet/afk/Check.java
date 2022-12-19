@@ -25,7 +25,7 @@ public class Check extends BukkitRunnable {
         Collection<? extends Player> players = Bukkit.getOnlinePlayers();
         for (Player player : players) {
             if (player.isAfk()) {
-                break;
+                continue;
             }
             Location location = player.getLocation();
             MoveStore ms  = get(player);
