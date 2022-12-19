@@ -6,3 +6,4 @@ broadcast-back:
   enable: true
   message:
     - "%player_name% 回来了"
+    - "%player_name% 回来力"

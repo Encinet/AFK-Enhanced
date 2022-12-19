@@ -10,7 +10,7 @@ import org.purpurmc.purpur.event.PlayerAFKEvent;
 
 public class PlayerAFK implements Listener {
     @EventHandler
-    public void onplayerAFK(PlayerAFKEvent e) {
+    public void onPlayerAFK(PlayerAFKEvent e) {
         Player player = e.getPlayer();
         if (e.isGoingAfk()) {
             // 模拟距离设置为真实视距
