@@ -23,6 +23,7 @@ public class Check extends BukkitRunnable {
     public void run() {
         // 检测位置
         Collection<? extends Player> players = Bukkit.getOnlinePlayers();
+        if (players.size() == 0) return;
         for (Player player : players) {
             if (player.isAfk()) {
                 continue;

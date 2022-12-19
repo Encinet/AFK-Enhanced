@@ -37,6 +37,7 @@ public final class AFK extends JavaPlugin {
 
         logger.info("注册任务");
         new Check().start();
+        new Reward().start();
     }
 
     @Override
