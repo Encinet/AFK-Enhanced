@@ -3,13 +3,14 @@ package org.encinet.afk.event;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityTargetEvent;
 import org.encinet.afk.Config;
 import org.encinet.afk.unit.dispose;
 import org.purpurmc.purpur.event.PlayerAFKEvent;
-
-import static org.bukkit.entity.EntityType.PLAYER;
 
 public class PlayerAFK implements Listener {
     @EventHandler
@@ -29,10 +30,28 @@ public class PlayerAFK implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGH)
+    public static void onEntityTargetEvent(EntityTargetEvent e) {
+        if (e.getTarget() instanceof Player player) {
+            if (player.isAfk()) {
+                e.setCancelled(true);
+            }
+        }
+    }
+    @EventHandler(priority = EventPriority.HIGH)
     public void onDamage(EntityDamageByEntityEvent e) {
-        if (!(e.getEntityType() == PLAYER)) {
-            e.setCancelled(true);
+        if (e.getDamager() instanceof Player player) {
+            if (player.isAfk()) {
+                e.setCancelled(true);
+            }
+        }
+    }
+    @EventHandler(priority = EventPriority.HIGH)
+    public void onDamage(EntityDamageEvent e) {
+        if (e.getEntity() instanceof Player player) {
+            if (player.isAfk()) {
+                e.setCancelled(true);
+            }
         }
     }
 }
