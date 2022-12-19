@@ -7,3 +7,5 @@ broadcast-back:
   message:
     - "%player_name% 回来了"
     - "%player_name% 回来力"
+# 单位: 毫秒
+not-move-time: 60000

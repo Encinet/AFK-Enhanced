@@ -37,7 +37,7 @@ public class Check extends BukkitRunnable {
         // 检测时间
         for (Map.Entry<Player, MoveStore> entry : move.entrySet()) {
             MoveStore ms = entry.getValue();
-            if (ms.getTime() >= 30000) {
+            if (ms.getTime() >= Config.notMoveTime) {
                 Player player = entry.getKey();
                 move.remove(player);
                 player.setAfk(true);

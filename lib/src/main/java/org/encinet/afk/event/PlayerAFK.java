@@ -34,7 +34,7 @@ public class PlayerAFK implements Listener {
     public static void onEntityTargetEvent(EntityTargetEvent e) {
         if (e.getTarget() instanceof Player player) {
             if (player.isAfk()) {
-                e.setCancelled(true);
+                e.setTarget(null);
             }
         }
     }
