@@ -1,8 +1,5 @@
 package org.encinet.afk;
 
-import java.util.Objects;
-import java.util.logging.Logger;
-
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -12,6 +9,9 @@ import org.encinet.afk.event.PlayerNum;
 import org.encinet.afk.tasks.Check;
 import org.encinet.afk.tasks.Reward;
 
+import java.util.Objects;
+import java.util.logging.Logger;
+
 public final class AFK extends JavaPlugin {
     public static final Logger logger = Logger.getLogger("AFK-Enhanced");
     public static Plugin plugin;
@@ -19,6 +19,7 @@ public final class AFK extends JavaPlugin {
 
     private static Check check;
     private static Reward reward;
+
     @Override
     public void onEnable() {
         // Plugin startup logic

@@ -13,6 +13,7 @@ public class Reward extends BukkitRunnable {
     public void start() {
         this.runTaskTimerAsynchronously(plugin, 20, 200);
     }
+
     public void stop() {
         do {
             this.cancel();
@@ -30,6 +31,7 @@ public class Reward extends BukkitRunnable {
 
     /**
      * 奖励玩家
+     *
      * @param player 玩家
      */
     private void detail(Player player) {

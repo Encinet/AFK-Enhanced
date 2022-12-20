@@ -19,6 +19,7 @@ public class Check extends BukkitRunnable {
     public void start() {
         this.runTaskTimerAsynchronously(plugin, 20, 20);
     }
+
     public void stop() {
         do {
             this.cancel();
@@ -35,7 +36,7 @@ public class Check extends BukkitRunnable {
                 continue;
             }
             Location location = player.getLocation();
-            MoveStore ms  = get(player);
+            MoveStore ms = get(player);
             if (!location.equals(ms.getLocation())) {
                 ms.setLocation(location);
                 ms.setTimeNow();
@@ -54,6 +55,7 @@ public class Check extends BukkitRunnable {
 
     /**
      * 安全的get
+     *
      * @param player 玩家
      * @return 返回MoveStore
      */

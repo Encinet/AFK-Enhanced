@@ -14,12 +14,15 @@ public class MoveStore {
     public Location getLocation() {
         return location;
     }
+
     public void setLocation(Location location) {
         this.location = location;
     }
+
     public long getTime() {
         return System.currentTimeMillis() - time;
     }
+
     public void setTimeNow() {
         this.time = System.currentTimeMillis();
     }

@@ -1,12 +1,11 @@
 package org.encinet.afk.unit;
 
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import org.encinet.afk.AFK;
 
-import me.clip.placeholderapi.PlaceholderAPI;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class dispose {
     public static <T> T randomList(List<T> list) {

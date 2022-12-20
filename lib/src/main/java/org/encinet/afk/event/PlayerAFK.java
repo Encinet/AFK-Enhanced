@@ -38,6 +38,7 @@ public class PlayerAFK implements Listener {
             }
         }
     }
+
     @EventHandler(priority = EventPriority.HIGH)
     public void onDamage(EntityDamageByEntityEvent e) {
         if (e.getDamager() instanceof Player player) {
@@ -46,6 +47,7 @@ public class PlayerAFK implements Listener {
             }
         }
     }
+
     @EventHandler(priority = EventPriority.HIGH)
     public void onDamage(EntityDamageEvent e) {
         if (e.getEntity() instanceof Player player) {

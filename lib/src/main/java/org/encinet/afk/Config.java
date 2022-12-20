@@ -1,8 +1,8 @@
 package org.encinet.afk;
 
-import java.util.List;
-
 import org.bukkit.configuration.file.FileConfiguration;
+
+import java.util.List;
 
 public class Config {
     public static boolean broadcastAwayEnable;
