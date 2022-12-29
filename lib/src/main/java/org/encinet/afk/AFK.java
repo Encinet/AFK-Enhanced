@@ -5,6 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.encinet.afk.event.PlayerAFK;
+import org.encinet.afk.event.PlayerEvents;
 import org.encinet.afk.event.PlayerNum;
 import org.encinet.afk.tasks.Check;
 import org.encinet.afk.tasks.Reward;
@@ -30,10 +31,6 @@ public final class AFK extends JavaPlugin {
         reloadConfig();
         Config.load();
 
-        logger.info("注册监听");
-        pm.registerEvents(new PlayerAFK(), this);
-        pm.registerEvents(new PlayerNum(), this);
-
         logger.info("注册指令");
         if (Bukkit.getPluginCommand("afk") != null) {
             Objects.requireNonNull(Bukkit.getPluginCommand("afk")).setExecutor(new Command());
@@ -44,6 +41,11 @@ public final class AFK extends JavaPlugin {
         reward = new Reward();
         check.start();
         reward.start();
+
+        logger.info("注册监听");
+        pm.registerEvents(new PlayerEvents(), this);
+        pm.registerEvents(new PlayerAFK(), this);
+        pm.registerEvents(new PlayerNum(), this);
     }
 
     @Override

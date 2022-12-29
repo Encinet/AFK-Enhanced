@@ -59,7 +59,7 @@ public class Check extends BukkitRunnable {
      * @param player 玩家
      * @return 返回MoveStore
      */
-    private MoveStore get(Player player) {
+    public static MoveStore get(Player player) {
         if (!move.containsKey(player)) {
             move.put(player, new MoveStore(player.getLocation()));
         }

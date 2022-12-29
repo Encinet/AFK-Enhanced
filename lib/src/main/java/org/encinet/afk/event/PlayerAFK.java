@@ -18,15 +18,19 @@ public class PlayerAFK implements Listener {
         Player player = e.getPlayer();
         if (e.isGoingAfk()) {
             // 模拟距离设置为真实视距
-            player.setSimulationDistance(player.getViewDistance());
             if (Config.broadcastAwayEnable) {
                 e.setBroadcastMsg(dispose.papi(player, dispose.randomList(Config.broadcastAwayMessages)));
             }
+            while (player.getWorld() == null) {
+            }
+            player.setSimulationDistance(player.getViewDistance());
         } else {
-            player.setSimulationDistance(Bukkit.getSimulationDistance());
             if (Config.broadcastBackEnable) {
                 e.setBroadcastMsg(dispose.papi(player, dispose.randomList(Config.broadcastBackMessages)));
             }
+            while (player.getWorld() == null) {
+            }
+            player.setSimulationDistance(Bukkit.getSimulationDistance());
         }
     }
 
