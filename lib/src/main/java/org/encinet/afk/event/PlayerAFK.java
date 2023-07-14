@@ -21,15 +21,13 @@ public class PlayerAFK implements Listener {
             if (Config.broadcastAwayEnable) {
                 e.setBroadcastMsg(dispose.papi(player, dispose.randomList(Config.broadcastAwayMessages)));
             }
-            while (player.getWorld() == null) {
-            }
+            player.getWorld();
             player.setSimulationDistance(player.getViewDistance());
         } else {
             if (Config.broadcastBackEnable) {
                 e.setBroadcastMsg(dispose.papi(player, dispose.randomList(Config.broadcastBackMessages)));
             }
-            while (player.getWorld() == null) {
-            }
+            player.getWorld();
             player.setSimulationDistance(Bukkit.getSimulationDistance());
         }
     }
