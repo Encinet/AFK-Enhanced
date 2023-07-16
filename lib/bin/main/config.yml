@@ -1,8 +1,0 @@
-broadcast-away:
-  enable: true
-  message:
-    - "%player_name% 双手离开了键盘"
-broadcast-back:
-  enable: true
-  message:
-    - "%player_name% 回来了"

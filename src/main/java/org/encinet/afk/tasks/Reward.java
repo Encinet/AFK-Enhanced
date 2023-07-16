@@ -11,7 +11,7 @@ import static org.encinet.afk.AFK.plugin;
 public class Reward extends BukkitRunnable {
 
     public void start() {
-        this.runTaskTimerAsynchronously(plugin, 20, 200);
+        this.runTaskTimerAsynchronously(plugin, 20, 10);
     }
 
     public void stop() {
@@ -35,6 +35,6 @@ public class Reward extends BukkitRunnable {
      * @param player 玩家
      */
     private void detail(Player player) {
-        player.giveExp(16);
+        player.giveExp(16, true);
     }
 }
