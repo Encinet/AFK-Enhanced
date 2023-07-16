@@ -6,7 +6,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.encinet.afk.event.PlayerAFK;
 import org.encinet.afk.event.PlayerEvents;
-import org.encinet.afk.event.PlayerNum;
 import org.encinet.afk.tasks.Check;
 import org.encinet.afk.tasks.Reward;
 
@@ -39,13 +38,10 @@ public final class AFK extends JavaPlugin {
         logger.info("注册任务");
         check = new Check();
         reward = new Reward();
-        check.start();
-        reward.start();
 
         logger.info("注册监听");
         pm.registerEvents(new PlayerEvents(), this);
         pm.registerEvents(new PlayerAFK(), this);
-        pm.registerEvents(new PlayerNum(), this);
     }
 
     @Override

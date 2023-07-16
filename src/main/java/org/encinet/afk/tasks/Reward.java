@@ -5,13 +5,17 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.encinet.afk.unit.Tools;
 
 import java.util.Collection;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.encinet.afk.AFK.plugin;
 
 public class Reward extends BukkitRunnable {
+    public Reward() {
+        start();
+    }
 
     public void start() {
-        this.runTaskTimerAsynchronously(plugin, 20, 10);
+        this.runTaskTimerAsynchronously(plugin, 20, 200);
     }
 
     public void stop() {
@@ -35,6 +39,8 @@ public class Reward extends BukkitRunnable {
      * @param player 玩家
      */
     private void detail(Player player) {
-        player.giveExp(16, true);
+        // [3,12)
+        int exp = ThreadLocalRandom.current().nextInt(3, 12);
+        player.giveExp(exp, true);
     }
 }

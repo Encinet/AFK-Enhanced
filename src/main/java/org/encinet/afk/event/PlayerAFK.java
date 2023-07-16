@@ -7,7 +7,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityTargetEvent;
+import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.encinet.afk.Config;
 import org.encinet.afk.unit.dispose;
 import org.purpurmc.purpur.event.PlayerAFKEvent;
@@ -33,9 +33,10 @@ public class PlayerAFK implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    public static void onEntityTargetEvent(EntityTargetEvent e) {
+    public static void onEntityTargetEvent(EntityTargetLivingEntityEvent e) {
         if (e.getTarget() instanceof Player player) {
             if (player.isAfk()) {
+                e.setCancelled(true);
                 e.setTarget(null);
             }
         }
