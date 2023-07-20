@@ -15,7 +15,7 @@ public class Reward extends BukkitRunnable {
     }
 
     public void start() {
-        this.runTaskTimerAsynchronously(plugin, 20, 200);
+        this.runTaskTimerAsynchronously(plugin, 20, 100);
     }
 
     public void stop() {
